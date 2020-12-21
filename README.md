@@ -1,2 +1,2 @@
 # countries_list
-excercise in JS
+exercise in JS
