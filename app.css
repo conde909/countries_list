@@ -1,0 +1,154 @@
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;  
+}
+
+.container_row {
+    display: -webkit-flex;
+    position: absolute;
+    top: 200px;
+    left: 6%;
+    width: 94%;
+    overflow: auto;
+    height: calc(100% - 20vh);
+}
+
+.row {
+    margin-top: 5px;
+}
+
+.container_column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    padding-inline-start: 0%;
+}
+
+li {
+    margin-top: 5px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+}
+
+.search_input {
+    border: none;
+    outline: none;
+    width: 97%;
+    height: 30px;
+}
+
+span {
+    cursor: pointer;
+}
+
+span:hover {
+    opacity: 0.7;
+}
+
+.card-overlay {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 600px;
+    left: calc(50% - 300px);
+    margin: auto;
+    z-index: 3;
+    position: fixed;
+    top: 30%;
+    background-color: white;
+    padding: 20px;
+    z-index: 9;
+}
+
+.card_flag {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    width: 150px;
+    height: 100px;
+    margin-right: 20px;    
+}
+
+.card_star_active {
+    color:orange;
+}
+
+.card_star_inactive {
+    color:black;
+}
+
+.container_search {
+    height: 200px;
+    outline: none;
+    border: none;
+    background-color: rgb(71,71,71);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.search_div {
+    background-color: white;
+    position: absolute;
+    left: 6%;
+    top: 75px;
+    padding: 10px;
+}
+
+.search_span {
+    position: absolute;    
+    right: 0;
+}
+
+.close_span {
+    font-size: 18px !important;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+}
+
+.countries_span {
+    font-size: 18px !important;
+    position: absolute;
+}
+
+@media (min-width: 700px) {    
+    .search_div {
+        width: 50%;
+    }
+}
+
+@media (max-width: 700px) {
+    .container_row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .search_div {
+        width: 80%;
+    }    
+} 
