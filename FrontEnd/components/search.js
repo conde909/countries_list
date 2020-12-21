@@ -7,7 +7,7 @@ class Search extends HTMLElement {
         this.innerHTML = 
 `<div id="container_search" class="container_search">
     <div class="search_div">
-        <input id="search_country_id" type="text" placeholder="Search">
+        <input id="search_country_id" type="text" class="search_input" placeholder="Search">
         <span id="search_country_button_id" class="material-icons search_span">search</span>
     </div>
 </div>

@@ -12,8 +12,7 @@ function prepareData() {
     let regions = [];
     let noFindRegion;
 
-    if (countries && countries.length > 0) {
-
+    if (countries && countries.length > 0) {        
         countries.forEach(function(country) {
             noFindRegion = true;
             
@@ -44,7 +43,7 @@ function prepareData() {
                 country.bordersName =  bordersName.substr(0, bordersName.length - 2);
             }
             
-        });
+        });        
         
         sessionStorage.setItem('countries', JSON.stringify(countries));
         sessionStorage.setItem('regions', regions.filter(function (region) {
@@ -136,15 +135,16 @@ function loadCountry(code) {
         if (country.PopulationFormat == undefined) {
             let PopulationFormat = '';
             if (Math.round(country.population/1000000) > 0) {
-                PopulationFormat = Math.round(country.population/1000000) + ' Millones'
+                PopulationFormat = Math.round(country.population/1000000) + '  M'
             } else {
-                PopulationFormat = Math.round(country.population/1000) + ' Miles'
+                PopulationFormat = Math.round(country.population/1000) + ' T'
             }
             country.PopulationFormat = PopulationFormat;
         }
         
         countryCard.innerHTML = 
-`<div class="row">
+`<span class="material-icons close_span" onclick="overlayActive(false)" title="Close">close</span>
+<div class="row">
     <img class="card_flag" src=${country.flag} alt="">
 
     <div class="row">
@@ -168,10 +168,9 @@ function loadCountry(code) {
         <b>Language:</b> ${country.languagesName}
     </div>
     <div class="row">
-        <b>Border country: ${country.bordersName}</b>
+        <b>Border countries: ${country.bordersName}</b>
     </div>                        
-</div>`
-    
+</div>`    
         countries[country_index] = country;
 
         sessionStorage.setItem('position', country_index);
@@ -198,7 +197,7 @@ function starChangeState(code){
     country.isFavorite = !country.isFavorite;
     
     let country_star = document.getElementById('country_star_' + code);
-    console.log(country_star);
+    
     if (country.isFavorite) {
        document.getElementById('star_' + code).classList.remove('hidden');
        country_star.innerText = 'star';

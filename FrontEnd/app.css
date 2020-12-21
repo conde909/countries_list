@@ -15,7 +15,11 @@
 .container_row {
     display: -webkit-flex;
     position: absolute;
-    top: 10%;
+    top: 200px;
+    left: 6%;
+    width: 94%;
+    overflow: auto;
+    height: calc(100% - 20vh);
 }
 
 .row {
@@ -41,10 +45,15 @@ li {
     margin-top: 5px;
 }
 
-input {
+h2 {
+    display: flex;
+    align-items: center;
+}
+
+.search_input {
     border: none;
     outline: none;
-    width: 90%;
+    width: 97%;
     height: 30px;
 }
 
@@ -59,11 +68,11 @@ span:hover {
 .card-overlay {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 600px;
+    left: calc(50% - 300px);
     margin: auto;
     z-index: 3;
-    position: absolute;
-    top: 15%;
-    left: 15%;
+    position: fixed;
+    top: 30%;
     background-color: white;
     padding: 20px;
     z-index: 9;
@@ -75,9 +84,7 @@ span:hover {
     top: 30%;
     width: 150px;
     height: 100px;
-    margin-right: 20px;
-    outline: solid;
-    outline-width: thin;
+    margin-right: 20px;    
 }
 
 .card_star_active {
@@ -89,10 +96,10 @@ span:hover {
 }
 
 .container_search {
-    height: 90px;
+    height: 200px;
     outline: none;
     border: none;
-    background-color: black;
+    background-color: rgb(71,71,71);
     position: fixed;
     top: 0;
     left: 0;
@@ -100,30 +107,38 @@ span:hover {
     z-index: 2;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .search_div {
-    outline: auto;
     background-color: white;
     position: absolute;
     left: 6%;
-    top: 20%;
+    top: 75px;
+    padding: 10px;
 }
 
 .search_span {
+    position: absolute;    
+    right: 0;
+}
+
+.close_span {
+    font-size: 18px !important;
     position: absolute;
-    top: 9%;
+    right: 0;
+    padding-right: 10px;
 }
 
 .countries_span {
     font-size: 18px !important;
+    position: absolute;
 }
 
 @media (min-width: 700px) {    
     .search_div {
         width: 50%;
-    }
-    
-    input {
-        width: 94%;
     }
 }
 
@@ -132,12 +147,8 @@ span:hover {
         -webkit-flex-direction: column;
         flex-direction: column;
     }
-
+    
     .search_div {
         width: 80%;
-    }
-
-    input {
-        width: 91%;
-    }
+    }    
 } 
